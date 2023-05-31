@@ -18,7 +18,7 @@ public class Attack {
 
 
 
-    public void use(Monsters opponent)
+    public void use(Monster opponent)
     {
         double chance = Math.random();
         if (this.powerpoint > 0 && this.accuracy > chance) {
@@ -28,5 +28,19 @@ public class Attack {
         }
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public int getDamage() {
+        return damage;
+    }
+
+    public int getPowerpoint() {
+        return powerpoint;
+    }
+
+    public double getAccuracy() {
+        return accuracy;
+    }
 }

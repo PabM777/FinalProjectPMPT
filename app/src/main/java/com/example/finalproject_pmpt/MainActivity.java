@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         btnStory = findViewById(R.id.btn_story);
 
 
-        Intent intent = new Intent( this , CoopScreen.class);
+        Intent intentCoop = new Intent( this , CoopScreen.class);
+        Intent intentSinglePlayer = new Intent(this, SinglePlayerActivity.class);
 
         //screen for co-op based gameplay
         btnCoop.setOnClickListener(new View.OnClickListener() {
@@ -57,13 +58,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent2 = new Intent(this, SinglePlayer.class );
+        Intent intent2 = new Intent(this, SinglePlayerActivity.class );
 
         //screen for single player mode
         btnSingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(intentSinglePlayer);
             }
         });
 

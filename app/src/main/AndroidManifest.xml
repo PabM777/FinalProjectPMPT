@@ -13,11 +13,13 @@
         android:theme="@style/Theme.FinalProject_PMPT"
         tools:targetApi="31">
         <activity
-            android:name=".SinglePlayer"
-            android:exported="false" />
+            android:name=".SinglePlayerActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".CoopScreen"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
