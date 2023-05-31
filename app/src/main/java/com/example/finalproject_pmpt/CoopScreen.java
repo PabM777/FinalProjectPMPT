@@ -2,6 +2,7 @@ package com.example.finalproject_pmpt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,7 +17,7 @@ public class CoopScreen extends AppCompatActivity {
     private Button btnMove3;
     private Button btnMove4;
 
-    Intent intent = new intent
+    Intent intent = new Intent();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

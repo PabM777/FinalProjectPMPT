@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Intent intent2 = new Intent(this, SinglePlayer.class );
+
         //screen for single player mode
         btnSingle.setOnClickListener(new View.OnClickListener() {
             @Override
