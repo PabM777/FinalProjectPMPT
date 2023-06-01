@@ -96,14 +96,14 @@ public class SinglePlayerActivity extends AppCompatActivity {
         //the challenger prompt if the challenger won
         if (challenger.getHP() > 0)
         {
-            System.out.println( opponent.getName() + " Fainted!" + '\n' +
+            tvMoveChat.setText( opponent.getName() + " Fainted!" + '\n' +
                     challenger.getName() + "is the winner!!!");
 
         }
         //the opponent prompt if the opponent won
         else if (opponent.getHP() > 0 )
         {
-            System.out.println( challenger.getName() + " Fainted!" +  '\n' +
+            tvmoveChat.setText( challenger.getName() + " Fainted!" +  '\n' +
                     opponent.getName() + " " + "won...");
         }
 
