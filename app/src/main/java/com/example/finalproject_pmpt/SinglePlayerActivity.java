@@ -2,6 +2,7 @@ package com.example.finalproject_pmpt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +23,8 @@ public class SinglePlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_player);
 
-        //monster1 = MonsterFactory.monster1();
-        //monster1 = MonsterFactory.monster2();
+        monster1 = MonsterFactory.monster1();
+        monster2 = MonsterFactory.monster2();
 
         tvMoveChat = findViewById(R.id.tv_move_chat);
         tvHealthBar1 = findViewById(R.id.tv_health_bar_one);
@@ -41,21 +42,47 @@ public class SinglePlayerActivity extends AppCompatActivity {
 
     public void runBattle()
     {
+       checkIfWon();
+        setTurnText(turnCounter);
 
-        while( !(monster1.getHp() <= 0 || monster2.getHp() <= 0) )
+        if (turnCounter % 2 == 0)
         {
-            setTurnText(turnCounter);
+            tvBattle.setText("It is " + monster1.getName() + "'s Turn");
+            attack(monster1, monster2);
+        }
+        else
+        {
+            tvBattle.setText("It is " +  monster2.getName() + "'s Turn\n" );
+            attack(monster2, monster1);
+        }
 
-            if (turnCounter % 2 == 0)
-            {
-                tvBattle.setText("It is " + monster1.getName() + "'s Turn");
-                attack(monster1, monster2);
+    }
+
+    private void checkIfWon() {
+        if (monster1.getHp() <= 0 || monster2.getHp() <= 0)
+        {
+            Monster winner;
+            Monster loser;
+            if (monster1.getHp() > 0 ) {
+                winner = monster1;
+                loser = monster2;
+
+            } else {
+                winner = monster2;
+                loser = monster1;
             }
-            else
-            {
-                tvBattle.setText("It is " +  monster2.getName() + "'s Turn\n" );
-                attack(monster2, monster1);
-            }
+
+            setContentView(R.layout.victoryscreen);
+            Button btnMenu = findViewById(R.id.btn_main_screen);
+            TextView tvWinner = findViewById(R.id.tv_winner_text);
+            tvWinner.setText(winner.getName() + " Won!!!");
+            btnMenu.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(SinglePlayerActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
     }
 
@@ -84,31 +111,16 @@ public class SinglePlayerActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     defender.takeDamage(attacker.getAttacks()[k].getDamage());
                     turnCounter++;
+                    runBattle();
                 }
             });
         }
 
     }
 
-    /*
-    private void displayWinner()
-    {
-        //the challenger prompt if the challenger won
-        if (challenger.getHP() > 0)
-        {
-            tvMoveChat.setText( opponent.getName() + " Fainted!" + '\n' +
-                    challenger.getName() + "is the winner!!!");
 
-        }
-        //the opponent prompt if the opponent won
-        else if (opponent.getHP() > 0 )
-        {
-            tvmoveChat.setText( challenger.getName() + " Fainted!" +  '\n' +
-                    opponent.getName() + " " + "won...");
-        }
 
-    }
 
-     */
+
     
 }

@@ -1,6 +1,8 @@
 package com.example.finalproject_pmpt;
 
-public class Monster {
+import java.io.Serializable;
+
+public class Monster implements Serializable {
 
     private String name;
     private int hp;
