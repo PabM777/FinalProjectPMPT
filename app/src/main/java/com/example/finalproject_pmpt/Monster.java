@@ -11,8 +11,9 @@ public class Monster {
 
 
 
-    public Monster(int health, int level, String ele1, String ele2, Attack a1, Attack a2, Attack a3, Attack a4)
+    public Monster(String name, int health, int level, String ele1, String ele2, Attack a1, Attack a2, Attack a3, Attack a4)
     {
+        this.name = name;
         this.hp = health;
         this.level = level;
         this.element = ele1;
