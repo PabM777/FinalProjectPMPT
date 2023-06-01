@@ -78,11 +78,11 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btn_battle"
+        android:id="@+id/btn_single"
         android:layout_width="158dp"
         android:layout_height="46dp"
         android:layout_weight="1"
-        android:text="Co-op"
+        android:text="SinglePlayer"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="0.912"
@@ -104,10 +104,10 @@
         app:layout_constraintVertical_bias="0.028" />
 
     <Button
-        android:id="@+id/btn_single"
+        android:id="@+id/btn_Coop"
         android:layout_width="147dp"
         android:layout_height="46dp"
-        android:text="SinglePlayer"
+        android:text="Co-op"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
         app:layout_constraintHorizontal_bias="0.0"

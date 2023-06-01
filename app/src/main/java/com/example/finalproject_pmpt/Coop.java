@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class SinglePlayerActivity extends AppCompatActivity {
+public class Coop extends AppCompatActivity {
 
     private TextView tvMoveChat, tvHealthBar1, tvHealthBar2, tvBattle;
     private Button[] btnsAttack = new Button[4];
@@ -79,7 +79,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
             btnMenu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(SinglePlayerActivity.this, MainActivity.class);
+                    Intent intent = new Intent(Coop.this, MainActivity.class);
                     startActivity(intent);
                 }
             });

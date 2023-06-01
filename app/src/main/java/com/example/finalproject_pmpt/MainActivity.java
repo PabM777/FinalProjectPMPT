@@ -31,17 +31,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tvTitle = findViewById(R.id.tv_title);
-        btnCoop = findViewById(R.id.btn_battle);
-        btnMonsters =findViewById(R.id.btn_monsters);
         btnSingle = findViewById(R.id.btn_single);
+        btnMonsters =findViewById(R.id.btn_monsters);
+        btnCoop = findViewById(R.id.btn_Coop);
         btnStory = findViewById(R.id.btn_story);
 
 
-        Intent intentCoop = new Intent( this , CoopScreen.class);
-        Intent intentSinglePlayer = new Intent(this, SinglePlayerActivity.class);
-
+        Intent intentSinglePlayer = new Intent( this , SInglePlayer.class);
         //screen for co-op based gameplay
-        btnCoop.setOnClickListener(new View.OnClickListener() {
+        btnSingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,7 +48,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
         //screen for checking/setting monsters
+
         btnMonsters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,22 +61,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent2 = new Intent(this, SinglePlayerActivity.class );
+
+
+
+
+
+        Intent intentCoop = new Intent(this, Coop.class);
 
         //screen for single player mode
-        btnSingle.setOnClickListener(new View.OnClickListener() {
+        btnCoop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intentSinglePlayer);
+                startActivity(intentCoop);
             }
         });
 
+
+
+
+
         //button for story mode of the game...
-        Intent intent4 = new Intent(this, storyMode.class)
+        Intent intentStory = new Intent(this, storyMode.class);
         btnStory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intent4);
+                startActivity(intentStory);
 
             }
         });
