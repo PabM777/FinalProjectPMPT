@@ -25,4 +25,41 @@ public class MonsterFactory {
         return gyroginga;
 
     }
+
+    public static Monster monster3()
+    {
+        Attack a1 = new Attack("Limtless heal", 5, 15, 1.2);
+        Attack a2 = new Attack("Internal Drain", 70, 10, 0.8);
+        Attack a3 = new Attack("Thrasing Rage", 85, 5, 1.0);
+        Attack a4 = new Attack("Titanium Punch", 90, 5, 0.4);
+        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4);
+        return gyroginga;
+
+    }
+
+    public static Monster monster4()
+    {
+        Attack a1 = new Attack("Limtless heal", 5, 15, 1.2);
+        Attack a2 = new Attack("Internal Drain", 70, 10, 0.8);
+        Attack a3 = new Attack("Thrasing Rage", 85, 5, 1.0);
+        Attack a4 = new Attack("Titanium Punch", 90, 5, 0.4);
+        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4);
+        return gyroginga;
+
+    }
+
+    public static Monster monster5()
+    {
+        Attack a1 = new Attack("Limtless heal", 5, 15, 1.2);
+        Attack a2 = new Attack("Internal Drain", 70, 10, 0.8);
+        Attack a3 = new Attack("Thrasing Rage", 85, 5, 1.0);
+        Attack a4 = new Attack("Titanium Punch", 90, 5, 0.4);
+        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4);
+        return gyroginga;
+
+    }
+
+
+
+
 }

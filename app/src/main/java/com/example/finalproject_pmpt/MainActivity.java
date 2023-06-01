@@ -69,9 +69,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //button for story mode of the game...
+        Intent intent4 = new Intent(this, storyMode.class)
         btnStory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(intent4);
 
             }
         });
