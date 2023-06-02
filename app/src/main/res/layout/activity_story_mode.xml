@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.12" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline43"
@@ -123,7 +123,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline44" />
 
     <TextView
-        android:id="@+id/tv_Choose"
+        android:id="@+id/tv_choose"
         android:layout_width="277dp"
         android:layout_height="100dp"
         android:text="Choose your starter!"
@@ -132,5 +132,5 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline50"
         app:layout_constraintStart_toStartOf="@+id/guideline47"
         app:layout_constraintTop_toTopOf="@+id/guideline42"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.228" />
 </androidx.constraintlayout.widget.ConstraintLayout>

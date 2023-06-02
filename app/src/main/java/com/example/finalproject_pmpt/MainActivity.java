@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btnStory = findViewById(R.id.btn_story);
 
 
-        Intent intentSinglePlayer = new Intent( this , SInglePlayer.class);
+        Intent intentSinglePlayer = new Intent( this , SinglePlayer.class);
         //screen for co-op based gameplay
         btnSingle.setOnClickListener(new View.OnClickListener() {
             @Override
