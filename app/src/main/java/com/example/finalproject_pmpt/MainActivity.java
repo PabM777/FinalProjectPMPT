@@ -42,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btnSingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                startActivity(intentSinglePlayer);
 
             }
         });
