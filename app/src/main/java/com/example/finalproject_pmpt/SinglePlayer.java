@@ -50,7 +50,7 @@ public class SinglePlayer extends AppCompatActivity {
         else
         {
             tvmoveChat.setText("It is " +  monster2.getName() + "'s Turn\n" );
-            attack(monster2, monster1);
+            opponentAttack(monster2, monster1);
         }
 
     }
@@ -117,8 +117,7 @@ public class SinglePlayer extends AppCompatActivity {
 
     private void opponentAttack(Monster attacker, Monster defender)
     {
-
-            int randMove = (int) (Math.random() * btnAttack.length);
+        int randMove = (int) (Math.random() * btnAttack.length);
              btnAttack[randMove].setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
