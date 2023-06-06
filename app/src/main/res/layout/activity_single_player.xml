@@ -176,4 +176,14 @@
         app:layout_constraintStart_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toTopOf="@+id/guideline41" />
 
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline31"
+        app:layout_constraintStart_toStartOf="@+id/guideline30"
+        app:layout_constraintTop_toTopOf="@+id/guideline41" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

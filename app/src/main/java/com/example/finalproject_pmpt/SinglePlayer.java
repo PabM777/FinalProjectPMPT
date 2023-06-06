@@ -11,27 +11,31 @@ import android.widget.TextView;
 public class SinglePlayer extends AppCompatActivity {
 
     private Button[] btnAttack = new Button[4];
+    private Button btnNext;
     private TextView tvmoveChat, tvhealthbar1, tvhealthbar2;
     private int turnCounter = (int) (Math.random() *2);
-    private Monster monster1;
-    private Monster monster2;
+    private Monster player;
+    private Monster enemy;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coop_screen);
-        monster1 = MonsterFactory.monster1();
-        monster2 = MonsterFactory.monster2();
+        setContentView(R.layout.activity_single_player);
+        player = MonsterFactory.monster1();
+        enemy = MonsterFactory.monster2();
 
         tvmoveChat = findViewById(R.id.tv_move_chat);
         tvhealthbar1 = findViewById(R.id.tv_health_bar_one);
         tvhealthbar2 = findViewById(R.id.tv_health_bar_two);
 
-        btnAttack[0] = findViewById(R.id.btn_move_one);
-        btnAttack[1] = findViewById(R.id.btn_move_two);
-        btnAttack[2] = findViewById(R.id.btn_move_three);
-        btnAttack[3] = findViewById(R.id.btn_move_four);
+        btnAttack[0] = findViewById(R.id.btn_move1);
+        btnAttack[1] = findViewById(R.id.btn_move2);
+        btnAttack[2] = findViewById(R.id.btn_move3);
+        btnAttack[3] = findViewById(R.id.btn_move4);
+
+        btnNext = findViewById(R.id.btn_next);
+        btnNext.setVisibility(View.INVISIBLE);
 
         runBattle();
 
@@ -44,29 +48,29 @@ public class SinglePlayer extends AppCompatActivity {
 
         if (turnCounter % 2 == 0)
         {
-            tvmoveChat.setText("It is " + monster1.getName() + "'s Turn");
-            attack(monster1, monster2);
+            tvmoveChat.setText("It is " + player.getName() + "'s Turn");
+            attack(player, enemy);
         }
         else
         {
-            tvmoveChat.setText("It is " +  monster2.getName() + "'s Turn\n" );
-            opponentAttack(monster2, monster1);
+            tvmoveChat.setText("It is " +  enemy.getName() + "'s Turn\n" );
+            opponentAttack(enemy, player);
         }
 
     }
 
     private void checkIfWon() {
-        if (monster1.getHp() <= 0 || monster2.getHp() <= 0)
+        if (player.getHp() <= 0 || enemy.getHp() <= 0)
         {
             Monster winner;
             Monster loser;
-            if (monster1.getHp() > 0 ) {
-                winner = monster1;
-                loser = monster2;
+            if (player.getHp() > 0 ) {
+                winner = player;
+                loser = enemy;
 
             } else {
-                winner = monster2;
-                loser = monster1;
+                winner = enemy;
+                loser = player;
             }
 
             setContentView(R.layout.victoryscreen);
@@ -85,14 +89,14 @@ public class SinglePlayer extends AppCompatActivity {
 
     private void setTurnText(int turnCounter)
     {
-        tvhealthbar1.setText(monster1.getName() + "'s HP: " + monster1.getHp());
-        tvhealthbar2.setText(monster2.getName() + "'s HP: " + monster2.getHp());
+        tvhealthbar1.setText(player.getName() + "'s HP: " + player.getHp());
+        tvhealthbar2.setText(enemy.getName() + "'s HP: " + enemy.getHp());
         Monster currentMonster;
         if (turnCounter %2 == 0) {
-            currentMonster = monster1;
+            currentMonster = player;
         }
         else {
-            currentMonster = monster2;
+            currentMonster = enemy;
         }
         for (int i=0; i<btnAttack.length; i++) {
             btnAttack[i].setText(currentMonster.getAttacks()[i].getName());
@@ -118,15 +122,20 @@ public class SinglePlayer extends AppCompatActivity {
     private void opponentAttack(Monster attacker, Monster defender)
     {
         int randMove = (int) (Math.random() * btnAttack.length);
-             btnAttack[randMove].setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View v) {
-                     defender.takeDamage(attacker.getAttacks()[randMove].getDamage());
-                     turnCounter++;
-                     runBattle();
 
-                 }
-             });
+        defender.takeDamage(attacker.getAttacks()[randMove].getDamage());
+
+        turnCounter++;
+
+
+        btnNext.setVisibility(View.VISIBLE);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnNext.setVisibility(View.INVISIBLE);
+                runBattle();
+            }
+        });
 
     }
 
