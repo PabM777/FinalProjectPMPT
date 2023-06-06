@@ -117,19 +117,18 @@ public class SinglePlayer extends AppCompatActivity {
 
     private void opponentAttack(Monster attacker, Monster defender)
     {
-        for (int i =0; i < btnAttack.length; i ++ )
-        {
-            int randMove = (int) (Math.random() * 4);
+
+            int randMove = (int) (Math.random() * btnAttack.length);
              btnAttack[randMove].setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
-                     defender.takeDamage(attacker.getAttacks()[i].getDamage());
+                     defender.takeDamage(attacker.getAttacks()[randMove].getDamage());
                      turnCounter++;
                      runBattle();
 
                  }
              });
-        }
+
     }
 
 }
