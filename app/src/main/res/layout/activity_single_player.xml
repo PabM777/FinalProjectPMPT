@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     tools:context=".Coop">
 
     <androidx.constraintlayout.widget.Guideline
@@ -185,5 +186,25 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
         app:layout_constraintTop_toTopOf="@+id/guideline41" />
+
+    <ImageView
+        android:id="@+id/iv_player"
+        android:layout_width="163dp"
+        android:layout_height="218dp"
+        app:srcCompat="@drawable/im_monster_1"
+        app:layout_constraintStart_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="@+id/guideline39"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+    <ImageView
+        android:id="@+id/iv_enemy"
+        android:layout_width="139dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline29"
+        app:layout_constraintTop_toBottomOf="@+id/tv_health_bar_two"
+        app:srcCompat="@drawable/im_monster_1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

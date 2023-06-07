@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SinglePlayer extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class SinglePlayer extends AppCompatActivity {
     private Button[] btnAttack = new Button[4];
     private Button btnNext;
     private TextView tvmoveChat, tvhealthbar1, tvhealthbar2;
+    private ImageView ivPlayer, ivEnemy;
     private int turnCounter = (int) (Math.random() *2);
     private Monster player;
     private Monster enemy;
@@ -25,6 +27,9 @@ public class SinglePlayer extends AppCompatActivity {
         player = MonsterFactory.monster1();
         enemy = MonsterFactory.monster2();
 
+        ivPlayer = findViewById(R.id.iv_player);
+        ivEnemy = findViewById(R.id.iv_enemy);
+
         tvmoveChat = findViewById(R.id.tv_move_chat);
         tvhealthbar1 = findViewById(R.id.tv_health_bar_one);
         tvhealthbar2 = findViewById(R.id.tv_health_bar_two);
@@ -36,6 +41,9 @@ public class SinglePlayer extends AppCompatActivity {
 
         btnNext = findViewById(R.id.btn_next);
         btnNext.setVisibility(View.INVISIBLE);
+
+        ivPlayer.setImageResource(player.getImageResNormal());
+        ivEnemy.setImageResource(enemy.getImageResNormal());
 
         runBattle();
 
@@ -107,11 +115,22 @@ public class SinglePlayer extends AppCompatActivity {
     private void attack(Monster attacker, Monster defender){
         for(int i=0; i<btnAttack.length; i++) {
             final int k = i;
+
+            ivPlayer.setImageResource(player.getImageResFight());
+            ivEnemy.setImageResource(enemy.getImageResNormal());
+
+            for (Button btn:btnAttack) {
+                btn.setVisibility(View.VISIBLE);
+            }
             btnAttack[k].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     defender.takeDamage(attacker.getAttacks()[k].getDamage());
                     turnCounter++;
+
+                    for (Button btn:btnAttack) {
+                        btn.setVisibility(View.INVISIBLE);
+                    }
                     runBattle();
                 }
             });
@@ -121,6 +140,10 @@ public class SinglePlayer extends AppCompatActivity {
 
     private void opponentAttack(Monster attacker, Monster defender)
     {
+
+        ivPlayer.setImageResource(player.getImageResNormal());
+        ivEnemy.setImageResource(enemy.getImageResFight());
+
         int randMove = (int) (Math.random() * btnAttack.length);
 
         defender.takeDamage(attacker.getAttacks()[randMove].getDamage());

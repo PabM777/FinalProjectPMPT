@@ -10,7 +10,9 @@ public class MonsterFactory {
         Attack a2 = new Attack("Dazzling Gleam", 80, 25, 1.5);
         Attack a3 = new Attack("Sludge Bomb", 90, 10, 1.0);
         Attack a4 = new Attack("Psychic", 90, 15, 1.9);
-        Monster quierriot = new Monster("Quierriot",230 , 226 , "", "", a1,a2,a3,a4);
+        int imageResNormal = R.drawable.im_monster_1;
+        int imageResFight = R.drawable.im_monster_1_fight;
+        Monster quierriot = new Monster("Quierriot",230 , 226 , "", "", a1,a2,a3,a4, imageResNormal, imageResFight);
         return quierriot;
     }
 
@@ -21,7 +23,9 @@ public class MonsterFactory {
         Attack a2 = new Attack("Internal Drain", 70, 10, 0.8);
         Attack a3 = new Attack("Thrasing Rage", 85, 5, 1.0);
         Attack a4 = new Attack("Titanium Punch", 90, 5, 0.4);
-        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4);
+        int imageResNormal = R.drawable.im_monster_2;
+        int imageResFight = R.drawable.im_monster_2_fight;
+        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4, imageResNormal, imageResFight);
         return gyroginga;
 
     }
@@ -32,7 +36,9 @@ public class MonsterFactory {
         Attack a2 = new Attack("Internal Drain", 70, 10, 0.8);
         Attack a3 = new Attack("Thrasing Rage", 85, 5, 1.0);
         Attack a4 = new Attack("Titanium Punch", 90, 5, 0.4);
-        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4);
+        int imageResNormal = R.drawable.im_monster_1;
+        int imageResFight = R.drawable.im_monster_1_fight;
+        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4, imageResNormal, imageResFight);
         return gyroginga;
 
     }
@@ -43,7 +49,9 @@ public class MonsterFactory {
         Attack a2 = new Attack("Internal Drain", 70, 10, 0.8);
         Attack a3 = new Attack("Thrasing Rage", 85, 5, 1.0);
         Attack a4 = new Attack("Titanium Punch", 90, 5, 0.4);
-        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4);
+        int imageResNormal = R.drawable.im_monster_2;
+        int imageResFight = R.drawable.im_monster_2_fight;
+        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4, imageResNormal, imageResFight);
         return gyroginga;
 
     }
@@ -54,7 +62,9 @@ public class MonsterFactory {
         Attack a2 = new Attack("Internal Drain", 70, 10, 0.8);
         Attack a3 = new Attack("Thrasing Rage", 85, 5, 1.0);
         Attack a4 = new Attack("Titanium Punch", 90, 5, 0.4);
-        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4);
+        int imageResNormal = R.drawable.im_monster_1;
+        int imageResFight = R.drawable.im_monster_1_fight;
+        Monster gyroginga = new Monster("Gyoginga", 230, 200, "", "", a1, a2, a3, a4, imageResNormal, imageResFight);
         return gyroginga;
 
     }

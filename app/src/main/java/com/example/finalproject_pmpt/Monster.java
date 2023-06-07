@@ -11,9 +11,12 @@ public class Monster implements Serializable {
     private String element2;
     private Attack[] attacks;
 
+    private int imageResNormal;
+    private int imageResFight;
 
 
-    public Monster(String name, int health, int level, String ele1, String ele2, Attack a1, Attack a2, Attack a3, Attack a4)
+
+    public Monster(String name, int health, int level, String ele1, String ele2, Attack a1, Attack a2, Attack a3, Attack a4, int imageResNormal, int imageResFight)
     {
         this.name = name;
         this.hp = health;
@@ -25,6 +28,8 @@ public class Monster implements Serializable {
         this.attacks[1] = a2;
         this.attacks[2] = a3;
         this.attacks[3] = a4;
+        this.imageResNormal = imageResNormal;
+        this.imageResFight = imageResFight;
     }
 
     public void takeDamage(int damage)
@@ -71,4 +76,13 @@ public class Monster implements Serializable {
     public Attack[] getAttacks() {
         return attacks;
     }
+
+    public int getImageResNormal() {
+        return imageResNormal;
+    }
+
+    public int getImageResFight() {
+        return imageResFight;
+    }
 }
+

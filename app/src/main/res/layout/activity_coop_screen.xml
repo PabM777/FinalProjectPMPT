@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     tools:context=".SinglePlayer">
 
     <androidx.constraintlayout.widget.Guideline
@@ -102,6 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Attack 1"
+        android:backgroundTint="@color/app_btns_bg"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline25"
         app:layout_constraintHorizontal_bias="1.0"
@@ -115,6 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Attack 2"
+        android:backgroundTint="@color/app_btns_bg"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintHorizontal_bias="0.0"
@@ -127,6 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Attack 3"
+        android:backgroundTint="@color/app_btns_bg"
         app:layout_constraintEnd_toStartOf="@+id/guideline25"
         app:layout_constraintTop_toTopOf="@+id/guideline18" />
 
@@ -135,6 +139,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Attack 4"
+        android:backgroundTint="@color/app_btns_bg"
         app:layout_constraintBottom_toTopOf="@+id/guideline26"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintHorizontal_bias="0.0"
@@ -147,6 +152,7 @@
         android:layout_width="96dp"
         android:layout_height="153dp"
         android:text="Move Chat: "
+        android:backgroundTint="@color/app_btns_bg"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
